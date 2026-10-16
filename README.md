@@ -1,3 +1,5 @@
+<p align="center"><img src="doc/header.png" alt="Turin running on Darwin under Window Maker, with the Naples menu bar and dock: the Date &amp; Time pane with its analog clock, month calendar, time zone and region settings, and the sidebar of Wi-Fi, Network, Date &amp; Time, Background and Users" width="100%"></p>
+
 # Turin
 
 **System Preferences for a small Darwin desktop.** Turin is the settings app for the GNUstep + Window Maker desktop on the Raspberry Pi 3 port of Darwin/XNU (the sibling repository [iokit](https://github.com/anurodhp/xnu-iokit-pi3)), alongside [Milan](https://github.com/anurodhp/milan) (files and desktop) and [Naples](https://github.com/anurodhp/naples) (dock and menu bar). Pure AppKit + libdispatch.
