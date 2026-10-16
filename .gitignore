@@ -1,0 +1,6 @@
+obj/
+*.app/
+*.o
+.build-test/
+tests/out/
+tests/qemu_run.log
