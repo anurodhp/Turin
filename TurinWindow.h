@@ -1,4 +1,4 @@
-/* TurinWindow: the System Preferences window -- the sidebar of panes on the left, the chosen pane on the right. */
+/* TurinWindow: the Settings window -- the sidebar of panes on the left, the chosen pane on the right. */
 #import <AppKit/AppKit.h>
 #import "TurinPane.h"
 

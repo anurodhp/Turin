@@ -1,8 +1,8 @@
 #!/bin/bash
-# Cross-builds Turin.app for the Pi (Darwin arm64) with the iokit repo's toolchain, exactly like naples' and milan's build.sh.
+# Cross-builds Settings.app (Turin) for the Pi (Darwin arm64) with the iokit repo's toolchain, exactly like naples' and milan's build.sh.
 #
 #   ./build.sh                 build; output lands in iokit's libc_build/gnustep/root
-#   ./build.sh deploy          build, then copy Turin.app to the Pi (the Background pane needs a Milan that listens for the
+#   ./build.sh deploy          build, then copy Settings.app to the Pi (the Background pane needs a Milan that listens for the
 #                              distributed MilanWallpaperChanged notification: deploy it from ../milan)
 #
 # IOKIT_DIR   the iokit checkout (default ../iokit next to this repo, else .. when this is iokit's third_party/turin)
@@ -21,6 +21,6 @@ TURIN_SRC="$HERE" "$STAGING/build_turin.sh"
 [ "${1:-}" = deploy ] || exit 0
 HOST="${DEPLOY_HOST:-root@10.0.0.142}"
 GSROOT="$(cd "$STAGING/libc_build/gnustep/root/usr/GNUstep/System" && pwd -P)"
-tar -C "$GSROOT/Applications" -cf - Turin.app |
-    ssh "$HOST" 'pkill -x Turin; sleep 1; rm -rf /Applications/Turin.app && tar -C /Applications -xf -'
-echo "deployed Turin.app to $HOST"
+tar -C "$GSROOT/Applications" -cf - Settings.app |
+    ssh "$HOST" 'pkill -x Turin; pkill -x Settings; sleep 1; rm -rf /Applications/Turin.app /Applications/Settings.app && tar -C /Applications -xf -'
+echo "deployed Settings.app to $HOST"

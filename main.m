@@ -1,4 +1,4 @@
-/* Turin: System Preferences for GNUstep + Window Maker on Darwin/XNU. See README.md.
+/* Turin: the Settings app for GNUstep + Window Maker on Darwin/XNU. See README.md.
  * Defaults (all optional): TurinPane (the pane to open: Wi-Fi, Network, Date & Time, Background, Users; `-TurinPane Users`
  * on the command line), TurinLastPane (the one shown when Turin last ran, kept by the window). */
 #import <AppKit/AppKit.h>
@@ -28,8 +28,8 @@ add_item(NSMenu *m, NSString *title, SEL action, NSString *key, id target)
 {
 	/* the keys GNUstep's info panel reads (GSInfoPanel.m), as Milan and Rome pass them */
 	NSDictionary *opts = [NSDictionary dictionaryWithObjectsAndKeys:
-	    @"Turin", @"ApplicationName",
-	    @"System Preferences for GNUstep.", @"ApplicationDescription",
+	    @"Settings", @"ApplicationName",
+	    @"System settings for GNUstep.", @"ApplicationDescription",
 	    @"0.1", @"ApplicationRelease",
 	    [NSArray arrayWithObject: @"Anurodh Pokharel"], @"Authors",
 	    @"Copyright © 2026 Anurodh Pokharel. MIT license.", @"Copyright",
@@ -45,13 +45,13 @@ add_item(NSMenu *m, NSString *title, SEL action, NSString *key, id target)
 
 - (void) buildMenus
 {
-	NSMenu *main = [[NSMenu alloc] initWithTitle: @"Turin"], *m;
+	NSMenu *main = [[NSMenu alloc] initWithTitle: @"Settings"], *m;
 	NSUInteger i;
-	m = [[NSMenu alloc] initWithTitle: @"Turin"];
-	add_item(m, @"About Turin", @selector(showAbout:), nil, self);
-	add_item(m, @"Hide Turin", @selector(hide:), @"h", NSApp);
-	add_item(m, @"Quit Turin", @selector(terminate:), @"q", NSApp);
-	[main setSubmenu: m forItem: add_item(main, @"Turin", NULL, nil, nil)]; [m release];
+	m = [[NSMenu alloc] initWithTitle: @"Settings"];
+	add_item(m, @"About Settings", @selector(showAbout:), nil, self);
+	add_item(m, @"Hide Settings", @selector(hide:), @"h", NSApp);
+	add_item(m, @"Quit Settings", @selector(terminate:), @"q", NSApp);
+	[main setSubmenu: m forItem: add_item(main, @"Settings", NULL, nil, nil)]; [m release];
 
 	m = [[NSMenu alloc] initWithTitle: @"Edit"];
 	add_item(m, @"Cut", @selector(cut:), @"x", nil);

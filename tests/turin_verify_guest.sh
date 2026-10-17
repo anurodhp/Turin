@@ -20,7 +20,7 @@ sleep 20
 /usr/local/bin/gdnc > $T/gdnc.log 2>&1 &
 $X/wmaker > $T/wmaker.log 2>&1 &
 sleep 30
-/Applications/Turin.app/Turin -TurinPane Wi-Fi > $T/turin.log 2>&1 &
+/Applications/Settings.app/Settings -TurinPane Wi-Fi > $T/turin.log 2>&1 &
 # GNUstep starts slowly under QEMU/TCG (minutes): wait for the window (titled after the pane) to be mapped
 i=0
 while [ $i -lt $W ]; do
@@ -61,5 +61,5 @@ ls -ld /Users/adalovelace 2>&1
 grep '^staff:\|^admin:' /etc/group
 echo "== log"
 cat $T/turin.log | tail -40
-pkill -x Turin; pkill -x wmaker; pkill -x gdnc; pkill -x Xvfb
+pkill -x Settings; pkill -x wmaker; pkill -x gdnc; pkill -x Xvfb
 echo "TURIN_TEST DONE"

@@ -1,7 +1,7 @@
 #!/bin/bash
 # QEMU test of Turin: copies tests/turin_verify_guest.sh onto an iokit test image, boots it with iokit's
 # tools/boot_test.py, runs it as root (see that script for the steps), then copies the screenshots and Turin's log back
-# out as $OUT/turin_*.png / turin.log. The image needs Turin.app and the X/GNUstep stack injected first
+# out as $OUT/turin_*.png / turin.log. The image needs Settings.app and the X/GNUstep stack injected first
 # (iokit: tools/init_binary/inject_into_sd_image.sh <image>), plus x11_probe and xtest_type.
 # Usage: tests/turin_qemu_test.sh <image> [out dir]      IOKIT_DIR defaults to ../iokit
 set -e

@@ -33,5 +33,5 @@ this repository):
   libjpeg-turbo              IJG/BSD      (c) libjpeg-turbo authors
 
 Linking the LGPL GNUstep libraries dynamically leaves Turin's own code under
-the MIT license above; a distribution of Turin.app with those libraries must
+the MIT license above; a distribution of Settings.app with those libraries must
 follow the LGPL for them.

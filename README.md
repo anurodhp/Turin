@@ -2,7 +2,7 @@
 
 # Turin
 
-**System Preferences for a small Darwin desktop.** Turin is the settings app for the GNUstep + Window Maker desktop on the Raspberry Pi 3 port of Darwin/XNU (the sibling repository [iokit](https://github.com/anurodhp/xnu-iokit-pi3)), alongside [Milan](https://github.com/anurodhp/milan) (files and desktop) and [Naples](https://github.com/anurodhp/naples) (dock and menu bar). Pure AppKit + libdispatch.
+**System settings for a small Darwin desktop.** Turin is the Settings app (`Settings.app`) for the GNUstep + Window Maker desktop on the Raspberry Pi 3 port of Darwin/XNU (the sibling repository [iokit](https://github.com/anurodhp/xnu-iokit-pi3)), alongside [Milan](https://github.com/anurodhp/milan) (files and desktop) and [Naples](https://github.com/anurodhp/naples) (dock and menu bar). Pure AppKit + libdispatch.
 
 One window: a sidebar of panes with colourful icons on the left, the chosen pane on the right. ⌘1–⌘5 (View menu) or the arrow keys switch panes; `-TurinPane Users` opens on a given one.
 
@@ -43,11 +43,11 @@ One window: a sidebar of panes with colourful icons on the left, the chosen pane
 You need a Mac with **Xcode 12** (the iPhoneOS SDK the port is built with) and a current Xcode for its linker, and the [iokit](https://github.com/anurodhp/xnu-iokit-pi3) repository checked out next to this one (`../iokit`, or set `IOKIT_DIR`) with its toolchain and GNUstep libraries already built.
 
 ```sh
-./build.sh            # cross-build; Turin.app lands in iokit's libc_build/gnustep/root
-./build.sh deploy     # build, then copy Turin.app to the Pi
+./build.sh            # cross-build; Settings.app lands in iokit's libc_build/gnustep/root
+./build.sh deploy     # build, then copy Settings.app to the Pi
 ```
 
-`deploy` uses `DEPLOY_HOST` (default `root@10.0.0.142`). iokit's `build_everything.sh` builds it with `tools/userland_staging/build_turin.sh`, and `inject_into_sd_image.sh` puts it on the image as `/Applications/Turin.app` (Window Maker's root menu has it as System Preferences).
+`deploy` uses `DEPLOY_HOST` (default `root@10.0.0.142`). iokit's `build_everything.sh` builds it with `tools/userland_staging/build_turin.sh`, and `inject_into_sd_image.sh` puts it on the image as `/Applications/Settings.app`. Window Maker's root menu and Naples' Hexley menu both open it as Settings.
 
 `tests/turin_qemu_test.sh <image>` boots an injected iokit image in QEMU, opens every pane under Xvfb, creates a user through the New User dialog and copies the screenshots back to `tests/out/`.
 

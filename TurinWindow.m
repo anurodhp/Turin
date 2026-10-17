@@ -85,7 +85,7 @@
 	window = [[NSWindow alloc] initWithContentRect: NSMakeRect(floor(NSMidX(scr) - w / 2), floor(NSMidY(scr) - h / 2), w, h)
 	                                     styleMask: NSTitledWindowMask | NSClosableWindowMask | NSMiniaturizableWindowMask
 	                                       backing: NSBackingStoreBuffered defer: NO];
-	[window setTitle: @"System Preferences"];
+	[window setTitle: @"Settings"];
 	[window setReleasedWhenClosed: NO];
 	[window setFrameAutosaveName: @"TurinMain"];
 	sidebar = [[TurinSidebar alloc] initWithFrame: NSMakeRect(0, 0, SidebarW, h) owner: self];
